@@ -1,0 +1,116 @@
+<!doctype html>
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>SPI</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- needs images, font... therefore can not be part of ui.css -->
+        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="bower_components/weather-icons/css/weather-icons.min.css">
+        <!-- end needs images -->
+
+        <link rel="stylesheet" href="styles/main.css">
+
+    </head>
+    <body data-ng-app="app" id="app" data-custom-background data-off-canvas-nav>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/index.html">SPI</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#/touteslesFormations">Formations <span class="sr-only">(current)</span></a></li>
+                <li><a href="#/formations/M2DOSI">TESTT</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <form class="navbar-form navbar-left">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+        <div class="container">
+            <div ng-view></div>
+        </div>
+
+        <!-- build:js scripts/vendor.js -->
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+        <script src="bower_components/underscore/underscore-min.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js scripts/ui.js -->
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+        <script src="bower_components/jquery-spinner/dist/js/jquery.spinner.min.js"></script>
+        <script src="bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
+        <script src="bower_components/jquery-steps/build/jquery.steps.min.js"></script>
+        <script src="bower_components/toastr/toastr.min.js"></script>
+        <script src="bower_components/bootstrap-file-input/bootstrap.file-input.js"></script>
+        <script src="bower_components/jquery.slimscroll/jquery.slimscroll.min.js"></script>
+        <script src="bower_components/holderjs/holder.js"></script>
+        <script src="bower_components/raphael/raphael-min.js"></script>
+        <script src="bower_components/morris.js/morris.js"></script>
+        <script src="bower_components/flot/jquery.flot.js"></script>
+        <script src="bower_components/flot/jquery.flot.resize.js"></script>
+        <script src="bower_components/flot/jquery.flot.pie.js"></script>
+        <script src="bower_components/flot/jquery.flot.stack.js"></script>
+        <script src="bower_components/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+        <script src="bower_components/flot/jquery.flot.time.js"></script>
+        <script src="bower_components/gauge.js/dist/gauge.min.js"></script>
+        <script src="bower_components/jquery.easy-pie-chart/dist/angular.easypiechart.min.js"></script>
+        <script src="bower_components/angular-wizard/dist/angular-wizard.min.js"></script>
+        <script src="bower_components/textAngular/dist/textAngular-rangy.min.js"></script>
+        <script src="bower_components/textAngular/dist/textAngular-sanitize.min.js"></script>
+        <script src="bower_components/textAngular/dist/textAngular.min.js"></script>
+        <script src="bower_components/angular-ui-tree/dist/angular-ui-tree.min.js"></script>
+        <script src="bower_components/ng-tags-input/ng-tags-input.min.js"></script>
+        <!-- endbuild -->
+        <!-- build:js({.tmp,client}) scripts/app.js -->
+        <script src="scripts/app.js"></script>
+        <!-- endbuild -->
+        <script src="scripts/controllers/formation.js"></script>
+        <script src="scripts/controllers/InfoFormation.js"></script>
+        <script src="scripts/controllers/UpdateFormation.js"></script>
+        <script src="scripts/controllers/AjouterFormation.js"></script>
+    </body>
+</html>

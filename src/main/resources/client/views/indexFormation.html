@@ -1,0 +1,22 @@
+
+
+
+
+<div ng-controller="FormationMainCtrl" >
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h2>liste des formations</h2>
+			</div>
+			<div class="col-md-6">
+				<h2><a href="#/ajouterFormation" class="btn btn-primary">ajouter une formation</a></h2>
+			</div>
+		</div>
+		<div class="row" class="list-group">
+			<a href="#/formation/{{formation.codeFormation}}" class="list-group-item" ng-repeat="formation in formations">
+				<h4 class="list-group-item-heading">{{formation.nomFormation}}</h4>
+				<p class="list-group-item-text">{{formation.codeFormation}}</p>
+			</a>
+		</div>
+	</div>
+</div>

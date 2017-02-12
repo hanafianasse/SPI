@@ -1,0 +1,67 @@
+<div ng-controller="FormationAjouterCtrl">
+	<div class="col-md-8 col-md-offset-2">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h5>nouvelle formation</h5>
+			</div>
+			<div class="panel-body">
+				<form class="form-horizontal" ng-submit="ajouterNouvelleFormation()">
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Code Formation</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" ng-model="codeFormation" placeholder="code Formation">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Nom formation</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" ng-model="nomFormation" placeholder="Nom Formation">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Diplome</label>
+						<div class="col-sm-9">
+							<select class="form-control" ng-model="diplome">
+								<option value="L">Licence</option>
+								<option value="M">Master</option>
+								<option value="D">Doctorat</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Double diplome</label>
+						<div class="col-sm-9">
+							<select class="form-control" ng-model="doubleDiplome">
+								<option value="O">Oui</option>
+								<option value="N">Non</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Années d'étude</label>
+						<div class="col-sm-9">
+							<input type="number" min="0" max="5" class="form-control" ng-model="n0Annee" placeholder="Années d'étude">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Début accréditation</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" ng-model="debutAccreditation" placeholder="jj-mm-aaaa">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Fin accréditation</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" ng-model="finAccreditation" placeholder="jj-mm-aaaa">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<input type="submit" text="ajouter" class="btn btn-primary"></input>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
