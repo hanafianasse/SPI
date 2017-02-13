@@ -37,9 +37,7 @@ public class ServiceFormation implements FormationInterface {
 
 	@Override
 	public Formation updateFormation(String codeFormation, Formation formation) {
-		DeleteFormation(codeFormation);
-		formationRepo.save(formation);
-		return formationRepo.findByCodeFormation(formation.getCodeFormation());
+		return formationRepo.save(formation);
 	}
 
 	@Override

@@ -1,23 +1,26 @@
 'use strict';
 
 angular.module('app')
-	.service('ServiceFormation3',[ '$http','$routeParams', function ($http,$routeParams) {
-	var codeFormation = $routeParams.codeFormation;
-	this.getOneFormation = function(callback){
-		var url = "/formations/"+codeFormation;
-		$http.get(url).then(function(response){
-			callback(response.data);
-		});
-	};
-}]);
-
-angular.module('app')
-  .controller('FormationUpdateCtrl', ['$scope','ServiceFormation3',function ($scope, ServiceFormation3) {
-
-  	alert('je suis la');
-
-  	ServiceFormation3.getOneFormation(function (data) {
+  .controller('FormationUpdateCtrl', ['$scope','ServiceFormation','$http','$routeParams','$location',function ($scope,ServiceFormation,$http,$routeParams,$location) {
+  	
+  	var codeFormation = $routeParams.codeFormation;
+  	ServiceFormation.getOneFormation(codeFormation,function (data) {
 		$scope.formation = data;
 	});
+
+	$scope.updateFormation = function(){
+		var clientUrl = '/formations/update';
+		var request = $http({
+			method: "PUT",
+			url: clientUrl,
+			data: $scope.formation
+		});
+		request.success(
+			function(response) {
+				$location.path('/touteslesFormations');
+				console.log(response);
+			}
+		);
+	}
 	
 }]);
