@@ -30,7 +30,7 @@ angular.module('app')
 	});
 
 	$scope.deleteFormation = function(codeFormation){
-		console.log(codeFormation);
+		ServiceFormation.deleteFormation(codeFormation);
 	}
 
 }]);

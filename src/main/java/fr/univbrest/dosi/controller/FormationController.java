@@ -38,45 +38,22 @@ public class FormationController {
 		return this.service.getFormationByCodeFormation(codeFormation);
 	}
 
-	@RequestMapping(value = "/delete/{codeFormation}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/delete", method = RequestMethod.DELETE)
 	public Object deleteFormation(
-			@PathVariable("codeFormation") final String codeFormation) {
+			@RequestBody final String codeFormation) {
 		this.service.DeleteFormation(codeFormation);
 		return "Formation " + codeFormation + " was deleted ";
 	}
 	
-	//: /{codeFormation}/{nomFormation}/{diplome}/{doubleDiplome}/{n0Anne}/{dateDebutAccreditation}/{dateFinAccreditation}
 	@RequestMapping(value = "/ajouter", method = RequestMethod.POST)
 	public Formation ajouterFormation(
-			@RequestParam(value = "codeFormation", required = true) String codeFormation,
-			@RequestParam(value = "nomFormation", required = true) String nomFormation,
-			@RequestParam(value = "diplome", required = true) String diplome,
-			@RequestParam(value = "doubleDiplome", required = true) String doubleDiplome,
-			@RequestParam(value = "n0Annee", required = true) String n0Annee,
-			@RequestParam(value = "dateDebutAccreditation", required = true) String dateDebutAccreditation,
-			@RequestParam(value = "dateFinAccreditation", required = true) String dateFinAccreditation) {
-		Formation nouvelleFormation = new Formation();
-		nouvelleFormation.setCodeFormation(codeFormation);
-		nouvelleFormation.setNomFormation(nomFormation);
-		nouvelleFormation.setDiplome(diplome);
-		nouvelleFormation.setDoubleDiplome(doubleDiplome);
-		nouvelleFormation.setN0Annee(new BigDecimal(n0Annee));
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MMM-dd");
-		try {
-			Date debutAccreditation = formatter.parse(dateDebutAccreditation);
-			Date finAccreditation = formatter.parse(dateFinAccreditation);
-			nouvelleFormation.setDebutAccreditation(debutAccreditation);
-			nouvelleFormation.setFinAccreditation(finAccreditation);
-		} catch (Exception e) {
-			//throw new Exception(e.getMessage());
-		}
-		return this.service.ajouterFormation(nouvelleFormation);
+			@RequestBody Formation newFormation) {
+		return this.service.ajouterFormation(newFormation);
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.PUT)
 	public Formation updateFormation(
 			@RequestBody Formation updatedFormation) {
-		System.out.println(updatedFormation);
 		return this.service.updateFormation(updatedFormation.getCodeFormation(),updatedFormation);
 	}
 }

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .controller('FormationUpdateCtrl', ['$scope','ServiceFormation','$http','$routeParams','$location',function ($scope,ServiceFormation,$http,$routeParams,$location) {
+  .controller('FormationUpdateCtrl', ['$scope','ServiceFormation','$http','$routeParams',function ($scope,ServiceFormation,$http,$routeParams) {
   	
   	var codeFormation = $routeParams.codeFormation;
   	ServiceFormation.getOneFormation(codeFormation,function (data) {
@@ -9,18 +9,7 @@ angular.module('app')
 	});
 
 	$scope.updateFormation = function(){
-		var clientUrl = '/formations/update';
-		var request = $http({
-			method: "PUT",
-			url: clientUrl,
-			data: $scope.formation
-		});
-		request.success(
-			function(response) {
-				$location.path('/touteslesFormations');
-				console.log(response);
-			}
-		);
+		ServiceFormation.updateFormation($scope.formation);
 	}
 	
 }]);

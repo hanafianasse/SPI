@@ -22,7 +22,6 @@
 						controller: 'FormationAjouterCtrl',
 						controllerAs: 'Formation'
 					})
-					///update/:codeOldFormation:/:nomFormation/:diplome/:doubleDiplome/:n0Anne/:dateDebutAccreditation/:dateFinAccreditation'
 					.when('/update/:codeFormation',{
 						templateUrl: 'views/updateFormation.html',
 						controller: 'FormationUpdateCtrl',
