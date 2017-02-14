@@ -41,6 +41,7 @@ public class FormationController {
 	@RequestMapping(value = "/delete", method = RequestMethod.DELETE)
 	public Object deleteFormation(
 			@RequestBody final String codeFormation) {
+		System.out.println("je suis laaaaaaaaaaaaaaaaaa");
 		this.service.DeleteFormation(codeFormation);
 		return "Formation " + codeFormation + " was deleted ";
 	}
@@ -54,6 +55,6 @@ public class FormationController {
 	@RequestMapping(value = "/update", method = RequestMethod.PUT)
 	public Formation updateFormation(
 			@RequestBody Formation updatedFormation) {
-		return this.service.updateFormation(updatedFormation.getCodeFormation(),updatedFormation);
+		return this.service.updateFormation(updatedFormation);
 	}
 }

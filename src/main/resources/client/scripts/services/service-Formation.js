@@ -10,7 +10,14 @@ angular.module('app')
 	};
 
 	this.deleteFormation = function(codeFormation){
-		var clientUrl = '/formations/delete/'+codeFormation;
+/*
+		$http.delete("formations/delete/" + codeFormation).then(function(){
+			$location.path('/touteslesFormations');
+		},function(erreur){
+			alert("Erreur coté serveur" + erreur.data + "ffsdd" );
+		});
+		*/
+		var clientUrl = '/formations/delete';
 		var request = $http({
 			method: "DELETE",
 			url: clientUrl,
@@ -51,13 +58,17 @@ angular.module('app')
 		var request = $http({
 			method: "POST",
 			url: clientUrl,
-			data: formation
+			data: formation,
+			dataType: "application/json;charset=utf-8"
 		});
 		request.success(
 			function(response) {
 				$location.path('/touteslesFormations');
 			}
-		);
+		)
+		request.error(function(data, status, headers, config) {
+			console.log("saved comment"+ data);
+		})
 	};
 
 }]);

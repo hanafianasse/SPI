@@ -9,6 +9,7 @@ angular.module('app')
 	});
 
 	$scope.updateFormation = function(){
+		$scope.formation["Content-Type"] = "application/json"
 		ServiceFormation.updateFormation($scope.formation);
 	}
 	

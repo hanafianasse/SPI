@@ -12,7 +12,7 @@ public interface FormationInterface {
 
 	public String DeleteFormation(String codeFormation);
 
-	public Formation updateFormation(String codeFormation, Formation formation);
+	public Formation updateFormation(Formation formation);
 	
 	public Formation ajouterFormation(Formation formation);
 }
