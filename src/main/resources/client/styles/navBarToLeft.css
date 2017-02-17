@@ -121,3 +121,58 @@ body {
         margin-right: 0;
     }
 }
+/* End Here !! */
+
+
+/* Colors for home panels !!! */
+.panel-green {
+    border-color: #5cb85c;
+}
+
+.panel-green .panel-heading{
+    border-color: #5cb85c;
+    color: white;
+    background-color: #5cb85c;
+}
+
+.panel-green .panel-footer{
+    color: #5cb85c;
+}
+
+
+
+.panel-yellow {
+    border-color: #f0ad4e;
+}
+
+.panel-yellow .panel-heading{
+    border-color: #f0ad4e;
+    color: white;
+    background-color: #f0ad4e;
+}
+
+.panel-yellow .panel-footer{
+    color: #f0ad4e;
+}
+
+.panel-red {
+    border-color: #d9534f;
+}
+
+.panel-red .panel-heading{
+    border-color: #d9534f;
+    color: white;
+    background-color: #d9534f;
+}
+
+.panel-red .panel-footer{
+    color: #d9534f;
+}
+
+/* css page 404*/
+
+.center {text-align: center; margin-left: auto; margin-right: auto; margin-bottom: auto; margin-top: auto;}
+
+
+
+

@@ -34,6 +34,11 @@ public class FormationController {
 			@PathVariable("codeFormation") final String codeFormation) {
 		return this.service.getFormationByCodeFormation(codeFormation);
 	}
+	
+	@RequestMapping(value = "/nombre", method = RequestMethod.GET)
+	public int getNombreFormation() {
+		return this.service.getAllFormations().size();
+	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.DELETE)
 	public Object deleteFormation(@RequestBody final String codeFormation) {

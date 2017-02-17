@@ -2,6 +2,7 @@
 
 angular.module('app')
 	.service('ServiceFormation',[ '$http' ,'$location','$rootScope', function ($http,$location,$rootScope) {
+	
 	this.getAllFormation = function(callback){
 		var url = "/formations";
 		$http.get(url).then(function(response){
@@ -22,6 +23,11 @@ angular.module('app')
 				$location.path('/touteslesFormations');
 			}
 		);
+		request.error(function(response, status, headers, config) {
+			$rootScope.$broadcast('showError', {
+                data: "vous ne pouvais pas supprmer cette formation, un autre objet dépend d'elle"
+            });
+		});
 	};
 
 

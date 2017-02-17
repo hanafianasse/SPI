@@ -35,8 +35,14 @@ public class EnseignantController {
 		return this.service.getEnseignantByNoEnseignant(noEnseignant);
 	}
 
+	@RequestMapping(value = "/nombre", method = RequestMethod.GET)
+	public int getNombreEnseignant() {
+		return this.service.getAllEnseignants().size();
+	}
+
 	@RequestMapping(value = "/delete/{noEnseignant}", method = RequestMethod.DELETE)
-	public void deleteEnseignant(@PathVariable("noEnseignant") final long noEnseignant) {
+	public void deleteEnseignant(
+			@PathVariable("noEnseignant") final long noEnseignant) {
 		this.service.DeleteEnseignant(noEnseignant);
 	}
 

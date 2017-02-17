@@ -37,10 +37,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/deconnexion",method = RequestMethod.GET)
-	public void authentifier(final HttpServletRequest request) {
+	public void deconnexion(final HttpServletRequest request) {
 		request.getSession().removeAttribute("user");
 	}
-	
-	
-
 }

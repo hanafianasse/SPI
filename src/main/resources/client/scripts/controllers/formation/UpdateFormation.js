@@ -3,11 +3,7 @@
 angular.module('app')
   .controller('FormationUpdateCtrl', ['$scope','ServiceFormation','$http','$routeParams',function ($scope,ServiceFormation,$http,$routeParams) {
   	
-	var choixFormations = document.getElementById("choixFormations");
-	var choixNouvelleFormations = document.getElementById("choixNouvelleFormations");
-	choixNouvelleFormations.classList.remove("active");
-	choixFormations.classList.remove("active");
-	
+
   	var codeFormation = $routeParams.codeFormation;
   	ServiceFormation.getOneFormation(codeFormation,function (data) {
 		$scope.formation = data;

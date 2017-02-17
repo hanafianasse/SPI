@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .controller('EnseignantsAjouterCtrl', ['$scope','ServiceEnseignant','$rootScope',function ($scope, ServiceEnseignant,$rootScope) {
+  .controller('EnseignantsAjouterCtrl', ['$scope','ServiceEnseignant','$rootScope','$modal',function ($scope, ServiceEnseignant,$rootScope,$modal) {
 
 	$scope.enseignant = {
 		'noEnseignant' : "",

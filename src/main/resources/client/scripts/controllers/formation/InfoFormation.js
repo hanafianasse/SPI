@@ -1,14 +1,9 @@
 'use strict';
 
 angular.module('app')
-  .controller('FormationInfoCtrl', ['$scope','$routeParams','ServiceFormation',function ($scope,$routeParams,ServiceFormation) {
+  .controller('FormationInfoCtrl', ['$scope','$routeParams','ServiceFormation','$modal',function ($scope,$routeParams,ServiceFormation,$modal) {
 
-	var choixFormations = document.getElementById("choixFormations");
-	var choixNouvelleFormations = document.getElementById("choixNouvelleFormations");
-	choixNouvelleFormations.classList.remove("active");
-	choixFormations.classList.remove("active");
 
-	
   	$scope.formation = null;
   	var codeFormation = $routeParams.codeFormation;
 	ServiceFormation.getOneFormation(codeFormation, function (data) {
@@ -51,5 +46,18 @@ angular.module('app')
 			$scope.navBarEtat = 'showen';
 		}
 	}
+
+	$scope.$on('showError', function(event, response) {
+		$modal.open({
+			templateUrl: 'myModalContent.html',
+			backdrop: true,
+			controller: function ($scope, $modalInstance) {
+				$scope.myError = response.data;
+				$scope.cancel = function () {
+					$modalInstance.dismiss('cancel');
+				};
+			},
+		});
+	});
 
 }]);

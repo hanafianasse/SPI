@@ -1,12 +1,6 @@
 angular.module('app')
   .controller('FormationAjouterCtrl', ['$scope','$http','ServiceFormation','$modal',function ($scope,$http,ServiceFormation,$modal) {
 
-
-	var choixFormations = document.getElementById("choixFormations");
-	var choixNouvelleFormations = document.getElementById("choixNouvelleFormations");
-	choixNouvelleFormations.classList.add("active");
-	choixFormations.classList.remove("active");
-
 	$scope.formation = {
 		codeFormation : "",
 		nomFormation : "",

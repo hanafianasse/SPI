@@ -22,14 +22,14 @@
         <div id="wrapper">
             <div id="sidebar-wrapper">
                 <ul class="sidebar-nav">
-                    <li class="sidebar-brand"><a href="#/">SPI</a></li>
+                    <li class="sidebar-brand"><a href="#/Home">SPI</a></li>
                     <li class="active"><a href="#/touteslesFormations">Formations</a></li>
                     <li><a href="#/touslesEnseignants">Enseignant</a></li>
-                    <li><a href="#">Promotion</a></li>
-                    <li><a href="#">Unite Enseignement</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a>
+                    <li><a href="#/404">Promotion</a></li>
+                    <li><a href="#/404">Unite Enseignement</a></li>
+                    <li><a href="#/404">About</a></li>
+                    <li><a href="#/404">Services</a></li>
+                    <li><a href="#/404">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -72,7 +72,13 @@
         <!-- endbuild -->
         <!-- build:js({.tmp,client}) scripts/app.js -->
         <script src="scripts/app.js"></script>
+
+        <script src="scripts/services/Auth.js"></script>
         <!-- endbuild -->
+        <script src="scripts/controllers/home.js"></script>
+        <script src="scripts/controllers/404.js"></script>
+        <script src="scripts/services/homeService.js"></script>
+
         <script src="scripts/controllers/formation/formation.js"></script>
         <script src="scripts/controllers/formation/InfoFormation.js"></script>
         <script src="scripts/controllers/formation/UpdateFormation.js"></script>
@@ -84,8 +90,8 @@
         <script src="scripts/controllers/enseignant/AjouterEnseignant.js"></script>
         <script src="scripts/controllers/enseignant/UpdateEnseignant.js"></script>
         <script src="scripts/services/enseignant/service-enseignant.js"></script>
-<!--
+
         <script src="scripts/controllers/AuthCtrl.js"></script>
-        <script src="scripts/services/Auth.js"></script>-->
+        
     </body>
 </html>

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .controller('EnseignantsInfoCtrl', ['$scope','$routeParams','ServiceEnseignant',function ($scope,$routeParams,ServiceEnseignant) {
+  .controller('EnseignantsInfoCtrl', ['$scope','$routeParams','ServiceEnseignant','$modal',function ($scope,$routeParams,ServiceEnseignant,$modal) {
 
 
   	var noEnseignant = $routeParams.noEnseignant;
@@ -34,5 +34,18 @@ angular.module('app')
 			$scope.navBarEtat = 'showen';
 		}
 	}
+
+	$scope.$on('showError', function(event, response) {
+		$modal.open({
+			templateUrl: 'myModalContent.html',
+			backdrop: true,
+			controller: function ($scope, $modalInstance) {
+				$scope.myError = response.data;
+				$scope.cancel = function () {
+					$modalInstance.dismiss('cancel');
+				};
+			},
+		});
+	});
 
 }]);

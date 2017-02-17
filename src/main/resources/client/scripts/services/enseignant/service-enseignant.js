@@ -16,17 +16,6 @@ angular.module('app')
 			callback(response.data);
 		});
 	};
-/*
-	this.getLastEnseignant = function(callback){
-		var url = "/enseignant";
-		$http.get(url).then(function(response){
-			for(var i = 0 ; i < response.data.length; i++){
-				if(i == response.data.length-1){
-					callback(response.data);
-				}
-			}
-		});
-	};*/
 
 	this.deleteEnseignant = function(noEnseignant){
 		var clientUrl = '/enseignant/delete/' + noEnseignant;
@@ -39,6 +28,11 @@ angular.module('app')
 				$location.path('/touslesEnseignants');
 			}
 		);
+		request.error(function(response, status, headers, config) {
+			$rootScope.$broadcast('showError', {
+                data: "suppression impossible"
+            });
+		});
 	};
 
 

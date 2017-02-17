@@ -3,11 +3,6 @@
 angular.module('app')
   .controller('FormationMainCtrl', ['$scope','ServiceFormation','$rootScope',function ($scope, ServiceFormation,$rootScope) {
 
-  	choixFormations
-	var choixFormations = document.getElementById("choixFormations");
-	var choixNouvelleFormations = document.getElementById("choixNouvelleFormations");
-	choixFormations.classList.add("active");
-	choixNouvelleFormations.classList.remove("active");
 
 	$scope.formations = [];
 	ServiceFormation.getAllFormation(function (data) {

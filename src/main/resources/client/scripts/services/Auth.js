@@ -1,10 +1,10 @@
 'use strict';
-/*
+
 angular.module('app')
 	.factory('AuthService',['$http',function($http){
 		return{
 			authLocal : function(requestAuth){
-				config = {
+				var config = {
 					url : '/auth',
 					method : "POST",
 					data : requestAuth
@@ -12,19 +12,19 @@ angular.module('app')
 				return $http(config);
 			},
 			getUser : function(){
-				config = {
+				var config = {
 					url : '/user',
 					method : 'GET'
 				};
 				return $http(config);
 			},
 			deconnexion : function(){
-				config = {
+				var config = {
 					url : '/deconnexion',
 					method : "GET"
 				};
 				return $http(config);
 			}
 		}
-	}]);*/
+	}]);
 	
