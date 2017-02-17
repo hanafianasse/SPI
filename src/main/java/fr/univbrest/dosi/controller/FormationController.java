@@ -1,8 +1,6 @@
 package fr.univbrest.dosi.controller;
 
-import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.univbrest.dosi.bean.Formation;
@@ -39,9 +36,7 @@ public class FormationController {
 	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.DELETE)
-	public Object deleteFormation(
-			@RequestBody final String codeFormation) {
-		System.out.println("je suis laaaaaaaaaaaaaaaaaa");
+	public Object deleteFormation(@RequestBody final String codeFormation) {
 		this.service.DeleteFormation(codeFormation);
 		return "Formation " + codeFormation + " was deleted ";
 	}

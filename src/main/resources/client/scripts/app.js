@@ -26,6 +26,26 @@
 						templateUrl: 'views/updateFormation.html',
 						controller: 'FormationUpdateCtrl',
 						controllerAs: 'Formation'
+					})
+					.when('/touslesEnseignants',{
+						templateUrl: 'views/indexEnseignant.html',
+						controller: 'EnseignantsMainCtrl',
+						controllerAs: 'Enseignants'
+					})
+					.when('/enseignant/:noEnseignant',{
+						templateUrl: 'views/infoEnseignant.html',
+						controller: 'EnseignantsInfoCtrl',
+						controllerAs: 'Enseignants'
+					})
+					.when('/ajouterEnseignant',{
+						templateUrl: 'views/ajouterEnseignant.html',
+						controller: 'EnseignantsAjouterCtrl',
+						controllerAs: 'Enseignants'
+					})
+					.when('/enseignant/update/:noEnseignant',{
+						templateUrl: 'views/updateEnseignant.html',
+						controller: 'EnseignantUpdateCtrl',
+						controllerAs: 'Enseignants'
 					});
 			} ]
 	);

@@ -11,84 +11,28 @@
         <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="bower_components/weather-icons/css/weather-icons.min.css">
         <!-- end needs images -->
-
+<!--
         <link rel="stylesheet" href="styles/main.css">
+         Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="styles/navBarToLeft.css">
 
     </head>
     <body data-ng-app="app" id="app" data-custom-background data-off-canvas-nav>
-        <!--
-        <div class="navbar navbar-inverse navbar-fixed-left">
-            <a class="navbar-brand" href="#">Brand</a>
-            <ul class="nav navbar-nav">
-                <li class="dropdown"><a href="#/touteslesFormations" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#/touteslesFormations">Formation</a></li>
-                        <li><a href="#/promotion">Promotion</a></li>
-                        <li><a href="#/enseignant">Enseignant</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Sub Menu4</a></li>
-                        <li><a href="#">Sub Menu5</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Link2</a></li>
-                <li><a href="#">Link3</a></li>
-                <li><a href="#">Link4</a></li>
-                <li><a href="#">Link5</a></li>
-            </ul>
-        </div>
-    -->
-        <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="/index.html">SPI</a>
+        <div id="wrapper">
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand"><a href="#/">SPI</a></li>
+                    <li class="active"><a href="#/touteslesFormations">Formations</a></li>
+                    <li><a href="#/touslesEnseignants">Enseignant</a></li>
+                    <li><a href="#">Promotion</a></li>
+                    <li><a href="#">Unite Enseignement</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a>
+                    </li>
+                </ul>
             </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#/touteslesFormations">Formations <span class="sr-only">(current)</span></a></li>
-                <li><a href="#/formations/M2DOSI">TESTT</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>
-              </ul>
-              <form class="navbar-form navbar-left">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-              </form>
-              <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Link</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-        <div class="container">
             <div ng-view></div>
         </div>
 
@@ -129,10 +73,19 @@
         <!-- build:js({.tmp,client}) scripts/app.js -->
         <script src="scripts/app.js"></script>
         <!-- endbuild -->
-        <script src="scripts/controllers/formation.js"></script>
-        <script src="scripts/controllers/InfoFormation.js"></script>
-        <script src="scripts/controllers/UpdateFormation.js"></script>
-        <script src="scripts/controllers/AjouterFormation.js"></script>
-        <script src="scripts/services/service-Formation.js"></script>
+        <script src="scripts/controllers/formation/formation.js"></script>
+        <script src="scripts/controllers/formation/InfoFormation.js"></script>
+        <script src="scripts/controllers/formation/UpdateFormation.js"></script>
+        <script src="scripts/controllers/formation/AjouterFormation.js"></script>
+        <script src="scripts/services/formation/service-Formation.js"></script>
+        
+        <script src="scripts/controllers/enseignant/Enseignant.js"></script>
+        <script src="scripts/controllers/enseignant/InfoEnseignant.js"></script>
+        <script src="scripts/controllers/enseignant/AjouterEnseignant.js"></script>
+        <script src="scripts/controllers/enseignant/UpdateEnseignant.js"></script>
+        <script src="scripts/services/enseignant/service-enseignant.js"></script>
+<!--
+        <script src="scripts/controllers/AuthCtrl.js"></script>
+        <script src="scripts/services/Auth.js"></script>-->
     </body>
 </html>

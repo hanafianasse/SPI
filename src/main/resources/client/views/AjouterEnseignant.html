@@ -1,0 +1,178 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      </button>
+      <div ng-click="sowhHideSideBar()" class="navbar-brand" aria-label="Left Align">
+        <span  class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+      </div>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#/touslesEnseignants">Enseignant <span class="sr-only">(current)</span></a></li>
+        <li><a href="#/ajouterEnseignant">Nouveau enseignant</a></li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="page-content-wrapper">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12">
+				<div ng-controller="FormationAjouterCtrl">
+					<div class="col-md-8 col-md-offset-2">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h5>Nouveau Enseignant</h5>
+							</div>
+							<div class="panel-body">
+								<form class="form-horizontal" ng-submit="AjouterEnseignant()">
+									<div class="form-group">
+										<label class="col-sm-3 control-label">No Enseignant</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" ng-model="enseignant.noEnseignant">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Nom</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" ng-model="enseignant.nom" placeholder="Nom" required>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Prenom</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" ng-model="enseignant.prenom" placeholder="Prenom" required>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">sexe</label>
+										<div class="col-sm-9">
+											<div class="radio">
+												<label>
+													<input type="radio" name="sexe" ng-model="enseignant.sexe" value="H"/>
+													Homme
+												</label>
+												</div>
+												<div class="radio">
+												<label>
+													<input type="radio" name="sexe" ng-model="enseignant.sexe" value="F"/>
+													Femme
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">E-mail Perso</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" ng-model="enseignant.emailPerso" placeholder="E-mail Perso" >
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">E-mail UBO</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" ng-model="enseignant.emailUbo" placeholder="E-mail UBO" required>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">mobile</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" ng-model="enseignant.mobile" placeholder="Mobile" required>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Téléphone</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" ng-model="enseignant.telephone" placeholder="Telephone" >
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Type</label>
+										<div class="col-sm-9">
+											<select class="form-control" ng-model="enseignant.type">
+												<option value="INT">Intervenant</option>
+												<option value="MCF">Maître de Conférences</option>
+												<option value="PR">Professeur des Universités</option>
+												<option value="PRAG">Professeur Agrégé</option>
+												<option value="PRAST">Professionnel Associé</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Adresse</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" ng-model="enseignant.adresse" placeholder="Adresse" required>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Code Postal</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" ng-model="enseignant.codePostal" placeholder="Code Postale" required>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Ville</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" ng-model="enseignant.ville" placeholder="Pays" required>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Pays</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" ng-model="enseignant.pays" placeholder="Pays" required>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-offset-2 col-sm-10">
+											<input type="submit" text="ajouter" class="btn btn-primary"></input>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<script type="text/ng-template" id="myModalContent.html">
+
+<div class="modal-header">
+  <button type="button" class="close" ng-click="cancel()">&times;</button>
+  <h4 class="modal-title">Erreur</h4>
+</div>
+<div class="modal-body">
+	<p>{{myError}}</p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" ng-click="cancel()">Fermer</button>
+</div>
+</script>
+</div>

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-	.service('ServiceFormation',[ '$http' ,'$location', function ($http,$location) {
+	.service('ServiceFormation',[ '$http' ,'$location','$rootScope', function ($http,$location,$rootScope) {
 	this.getAllFormation = function(callback){
 		var url = "/formations";
 		$http.get(url).then(function(response){
@@ -10,13 +10,7 @@ angular.module('app')
 	};
 
 	this.deleteFormation = function(codeFormation){
-/*
-		$http.delete("formations/delete/" + codeFormation).then(function(){
-			$location.path('/touteslesFormations');
-		},function(erreur){
-			alert("Erreur coté serveur" + erreur.data + "ffsdd" );
-		});
-		*/
+
 		var clientUrl = '/formations/delete';
 		var request = $http({
 			method: "DELETE",
@@ -66,9 +60,11 @@ angular.module('app')
 				$location.path('/touteslesFormations');
 			}
 		)
-		request.error(function(data, status, headers, config) {
-			console.log("saved comment"+ data);
-		})
+		request.error(function(response, status, headers, config) {
+			$rootScope.$broadcast('showError', {
+                data: response.message
+            });
+		});
 	};
 
 }]);

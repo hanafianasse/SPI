@@ -13,8 +13,8 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li id="choixFormations"><a href="#/touteslesFormations">Formations <span class="sr-only">(current)</span></a></li>
-        <li id="choixNouvelleFormations"><a href="#/ajouterFormation">Nouvelle formation</a></li>
+        <li class="active"><a href="#/touslesEnseignants">Enseignants<span class="sr-only">(current)</span></a></li>
+        <li><a href="#/ajouterEnseignant">Nouveau Enseignant</a></li>
       </ul>
       <form class="navbar-form navbar-left">
         <div class="form-group">
@@ -44,15 +44,16 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-12">
-        <div ng-controller="FormationMainCtrl" >
+        <div ng-controller="EnseignantsMainCtrl" >
           <div class="container">
             <div class="row">
-                <h2>liste des formations</h2>
+                <h2>liste des enseignants</h2>
             </div>
             <div class="row" class="list-group">
-              <a href="#/formation/{{formation.codeFormation}}" class="list-group-item" ng-repeat="formation in formations">
-              <h4 class="list-group-item-heading">{{formation.nomFormation}}</h4>
-              <p class="list-group-item-text">{{formation.codeFormation}}</p>
+              <a href="#/enseignant/{{enseignant.noEnseignant}}" class="list-group-item" ng-repeat="enseignant in enseignants">
+              <h4 class="list-group-item-heading">{{enseignant.nom}}</h4>
+              <p class="list-group-item-text">{{enseignant.type}}</p>
+              <small class="text-muted">{{enseignant.emailUbo}}</small>
               </a>
             </div>
           </div>
@@ -60,4 +61,4 @@
       </div>
     </div>
   </div>
-</div>
+</div>       

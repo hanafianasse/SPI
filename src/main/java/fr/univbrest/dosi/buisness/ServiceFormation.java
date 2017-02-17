@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import fr.univbrest.dosi.bean.Formation;
+import fr.univbrest.dosi.exception.SpiException;
 import fr.univbrest.dosi.repositories.FormationRepository;
 
 @Component
@@ -42,6 +43,9 @@ public class ServiceFormation implements FormationInterface {
 
 	@Override
 	public Formation ajouterFormation(Formation formation) {
+		if(getFormationByCodeFormation(formation.getCodeFormation()) != null){
+			throw new SpiException("la formation "+formation.getCodeFormation()+" existe déjà");
+		}
 		return formationRepo.save(formation);
 	}
 }

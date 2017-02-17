@@ -14,7 +14,6 @@ public class Enseignant implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="NO_ENSEIGNANT")
 	private long noEnseignant;
 
@@ -41,7 +40,7 @@ public class Enseignant implements Serializable {
 
 	private String telephone;
 
-	@Column(name="\"TYPE\"")
+	//@Column(name="\"TYPE\"")
 	private String type;
 
 	private String ville;
