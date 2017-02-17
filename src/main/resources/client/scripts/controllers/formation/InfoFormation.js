@@ -3,6 +3,10 @@
 angular.module('app')
   .controller('FormationInfoCtrl', ['$scope','$routeParams','ServiceFormation','$modal',function ($scope,$routeParams,ServiceFormation,$modal) {
 
+	var formation = document.getElementById("formation");
+	var enseignant = document.getElementById("enseignant");
+	formation.classList.add("sidebarElementOnHover");
+	enseignant.classList.remove("sidebarElementOnHover");
 
   	$scope.formation = null;
   	var codeFormation = $routeParams.codeFormation;

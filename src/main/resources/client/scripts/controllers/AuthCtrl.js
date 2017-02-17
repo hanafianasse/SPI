@@ -3,6 +3,11 @@
 angular.module('app')
   .controller('AuthCtrl', ['$scope','AuthService','$location',function ($scope,AuthService,$location) {
 
+	var formation = document.getElementById("formation");
+	var enseignant = document.getElementById("enseignant");
+	formation.classList.remove("sidebarElementOnHover");
+	enseignant.classList.remove("sidebarElementOnHover");
+
 	$scope.connect = function(){
 		var authRequest = AuthService.authLocal($scope.user);
 

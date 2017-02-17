@@ -3,6 +3,11 @@
 angular.module('app')
   .controller('EnseignantUpdateCtrl', ['$scope','$routeParams','ServiceEnseignant',function ($scope,$routeParams,ServiceEnseignant) {
 
+	var formation = document.getElementById("formation");
+	var enseignant = document.getElementById("enseignant");
+	enseignant.classList.add("sidebarElementOnHover");
+	formation.classList.remove("sidebarElementOnHover");
+
   	var noEnseignant = $routeParams.noEnseignant;
 	ServiceEnseignant.getOneEnseignant(noEnseignant,function (data) {
 		$scope.enseignant = data;

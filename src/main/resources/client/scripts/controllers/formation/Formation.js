@@ -3,6 +3,10 @@
 angular.module('app')
   .controller('FormationMainCtrl', ['$scope','ServiceFormation','$rootScope',function ($scope, ServiceFormation,$rootScope) {
 
+	var formation = document.getElementById("formation");
+	var enseignant = document.getElementById("enseignant");
+	formation.classList.add("sidebarElementOnHover");
+	enseignant.classList.remove("sidebarElementOnHover");
 
 	$scope.formations = [];
 	ServiceFormation.getAllFormation(function (data) {

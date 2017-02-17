@@ -74,6 +74,12 @@ body {
     background: rgba(255,255,255,0.2);
 }
 
+.sidebarElementOnHover{
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
 .sidebar-nav li a:active,
 .sidebar-nav li a:focus {
     text-decoration: none;
@@ -171,7 +177,12 @@ body {
 
 /* css page 404*/
 
-.center {text-align: center; margin-left: auto; margin-right: auto; margin-bottom: auto; margin-top: auto;}
+.center {text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+}
 
 
 

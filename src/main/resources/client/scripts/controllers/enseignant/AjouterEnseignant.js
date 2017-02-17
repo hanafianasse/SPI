@@ -3,6 +3,12 @@
 angular.module('app')
   .controller('EnseignantsAjouterCtrl', ['$scope','ServiceEnseignant','$rootScope','$modal',function ($scope, ServiceEnseignant,$rootScope,$modal) {
 
+
+	var formation = document.getElementById("formation");
+	var enseignant = document.getElementById("enseignant");	
+	enseignant.classList.add("sidebarElementOnHover");
+	formation.classList.remove("sidebarElementOnHover");
+
 	$scope.enseignant = {
 		'noEnseignant' : "",
 		'nom' : "",

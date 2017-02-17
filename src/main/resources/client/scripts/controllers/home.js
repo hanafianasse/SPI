@@ -3,6 +3,12 @@
 angular.module('app')
   .controller('HomeMainCtrl', ['$scope','homeService','AuthService','$location',function ($scope,homeService,AuthService,$location) {
 
+
+	var formation = document.getElementById("formation");
+	var enseignant = document.getElementById("enseignant");
+	enseignant.classList.remove("sidebarElementOnHover");
+	formation.classList.remove("sidebarElementOnHover");
+
   	homeService.getNombreEnseignant(function (nombreEnseignant){
   		$scope.nombreEnseignant = nombreEnseignant;
   	});

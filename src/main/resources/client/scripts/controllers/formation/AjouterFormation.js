@@ -1,6 +1,13 @@
 angular.module('app')
   .controller('FormationAjouterCtrl', ['$scope','$http','ServiceFormation','$modal',function ($scope,$http,ServiceFormation,$modal) {
 
+
+	var formation = document.getElementById("formation");
+	var enseignant = document.getElementById("enseignant");
+	formation.classList.add("sidebarElementOnHover");
+	enseignant.classList.remove("sidebarElementOnHover");
+
+
 	$scope.formation = {
 		codeFormation : "",
 		nomFormation : "",

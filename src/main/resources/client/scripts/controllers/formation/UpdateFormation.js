@@ -2,7 +2,12 @@
 
 angular.module('app')
   .controller('FormationUpdateCtrl', ['$scope','ServiceFormation','$http','$routeParams',function ($scope,ServiceFormation,$http,$routeParams) {
-  	
+  
+
+	var formation = document.getElementById("formation");
+	var enseignant = document.getElementById("enseignant");
+	formation.classList.add("sidebarElementOnHover");
+	enseignant.classList.remove("sidebarElementOnHover");	
 
   	var codeFormation = $routeParams.codeFormation;
   	ServiceFormation.getOneFormation(codeFormation,function (data) {

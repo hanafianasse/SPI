@@ -3,6 +3,11 @@
 angular.module('app')
   .controller('EnseignantsMainCtrl', ['$scope','ServiceEnseignant','$rootScope',function ($scope, ServiceEnseignant,$rootScope) {
 
+	var formation = document.getElementById("formation");
+	var enseignant = document.getElementById("enseignant");
+	enseignant.classList.add("sidebarElementOnHover");
+	formation.classList.remove("sidebarElementOnHover");
+	
 	$scope.enseignants = [];
 	ServiceEnseignant.getAllEnseignant(function (data) {
 		$scope.enseignants = data;
